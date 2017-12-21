@@ -59,7 +59,7 @@ async function getAndCacheData() {
   const newData = formatData(data)
 
   let currentData = []
-  const path = './data.json'
+  const path = process.env.DATA_PATH || './data.json'
   if (fs.existsSync(path)) {
     currentData = JSON.parse(fs.readFileSync(path))
   }
